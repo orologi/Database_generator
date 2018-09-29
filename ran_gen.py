@@ -1,6 +1,6 @@
 import random
 from products import product_gen
-from parameters import *
+import parameters as pm
 
 '''
 Random reviews are assigned to every product entries
@@ -16,10 +16,10 @@ list_date = []
 
 
 def review_gen(num_range, review_l, review_answer_l):
-    neg_review_weight = (100 - review_weight)
-    neg_review_answer_weight = (100 - review_answer_weight)
-    my_list = [1] * (review_weight) + [2] * (neg_review_weight)
-    my_list_2 = [1] * (review_answer_weight) + [2] * (neg_review_answer_weight)
+    neg_review_weight = (100 - pm.review_weight)
+    neg_review_answer_weight = (100 - pm.review_answer_weight)
+    my_list = [1] * (pm.review_weight) + [2] * (neg_review_weight)
+    my_list_2 = [1] * (pm.review_answer_weight) + [2] * (neg_review_answer_weight)
     count = 0
     count_1 = 0
     for i in range(num_range):
@@ -41,9 +41,9 @@ function_clothing = []
 function_eletronics = []
 function_furniture = []
 
-rp_clothing = product_gen(list_1, function_clothing)
-rp_eletronics = product_gen(list_2, function_eletronics)
-rp_forniture = product_gen(list_3, function_furniture)
+rp_clothing = product_gen(pm.list_1, function_clothing)
+rp_eletronics = product_gen(pm.list_2, function_eletronics)
+rp_forniture = product_gen(pm.list_3, function_furniture)
 
 gender = []
 category_output = []
@@ -56,7 +56,7 @@ def category_creator(name, category_product, gender_o=False, ):
     review_gen(1, review, review_answer)
 
     if gender_o is True:
-        gender.append(random.choice(gender_choice))
+        gender.append(random.choice(pm.gender_choice))
 
     else:
         gender.append("Null")
