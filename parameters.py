@@ -5,10 +5,6 @@ Values can be set for the range of entries to be generated
 Valus can be set for profit range for category
 '''
 
-# number of entries
-range_entries = random.randint(0, 300)
-range_entries1 = random.randint(0, 300)
-range_entries2 = random.randint(0, 300)
 
 # values of profits for category
 profit_clothing = random.randint(1, 200)

@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 from date_gen import random_date
-import ran_gen as rang
+import ran_gen as rgen
 
 import parameters as pm
 # import sqlite3
@@ -18,20 +18,20 @@ count = 0
 
 
 def generator(country, start_date, end_date):
-    for i in range(pm.range_entries):
-        rang.category_creator(pm.category_1, rang.rp_clothing, True)
+    for i in range(random.randint(0, 300)):
+        rgen.category_creator(pm.category_1, rgen.rp_clothing, True)
         countries.append(country)
         list_date.append(random_date(start_date, end_date, random.random()))
         profit.append(pm.profit_clothing)
 
-    for i in range(pm.range_entries1):
-        rang.category_creator(pm.category_2, rang.rp_eletronics, False)
+    for i in range(random.randint(0, 300)):
+        rgen.category_creator(pm.category_2, rgen.rp_eletronics, False)
         countries.append(country)
         list_date.append(random_date(start_date, end_date, random.random()))
         profit.append(pm.profit_eletronic)
 
-    for i in range(pm.range_entries2):
-        rang.category_creator(pm.category_3, rang.rp_forniture, False)
+    for i in range(random.randint(0, 300)):
+        rgen.category_creator(pm.category_3, rgen.rp_forniture, False)
         countries.append(country)
         list_date.append(random_date(start_date, end_date, random.random()))
         profit.append(pm.profit_furniture)
@@ -61,8 +61,8 @@ for date in range(12):
 
 # build dataframe
 
-row = list(zip(list_date, rang.category_output, rang.product_output, rang.review,
-               rang.review_answer, countries, rang.gender, profit))
+row = list(zip(list_date, rgen.category_output, rgen.product_output, rgen.review,
+               rgen.review_answer, countries, rgen.gender, profit))
 
 
 # print("content",category_output, product_output, review, review_answer, countries, list_date )
